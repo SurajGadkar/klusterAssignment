@@ -22,22 +22,14 @@ export const getAuthors = async () => {
   }
 };
 
-export const getAuthorById = async (id) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/authors/${id}`);
-    const author = await response.data.author;
-    return author;
-  } catch (err) {
-    console.log(err);
-  }
+export const getAuthorById = (authors, id) => {
+  return authors.filter((author) => Number(author.id) === Number(id));
 };
 
-export const getBookById = async (id) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/books/${id}`);
-    const book = await response.data.book;
-    console.log(book);
-  } catch (err) {
-    console.log(err);
-  }
+export const getBookById = (books, id) => {
+  return books.filter((book) => Number(book.ISBN) === Number(id));
+};
+
+export const getBooksByAuthorName = (books, author) => {
+  return books.filter((book) => book.author === author);
 };
