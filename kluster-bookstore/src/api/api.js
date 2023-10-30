@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://private-anon-d708965310-bookstore.apiary-mock.com";
+const BASE_URL = "https://private-anon-d708965310-bookstore.apiary-mock.com";
 
 export const getBooks = async () => {
   try {
