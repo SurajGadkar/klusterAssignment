@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getBookById, getBooks } from "../api/api";
 import styles from "./BooksDetail.module.css";
+import Cart from "./Cart";
 
 function BooksDetail() {
   const [bookData, setBookData] = useState([]);
-
   const params = useParams();
   const bookId = params.bookId;
 
@@ -17,18 +17,27 @@ function BooksDetail() {
     });
   }, []);
 
+  
+
   return (
     <div>
       {bookData.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
-        <div className={styles.main__container}>
-          <img className={styles.image} src={bookData.image} />
-          <h1>{bookData.title}</h1>
-          <p>{bookData.author}</p>
-          <h3> $ {bookData.price?.value}</h3>
-          <p>{bookData.summary}</p>
-        </div>
+        <>
+          <div className={styles.main__container}>
+            <img className={styles.image} src={bookData.image} />
+            <h1>{bookData.title}</h1>
+            <p>{bookData.author}</p>
+            <h3> $ {bookData.price?.value}</h3>
+            <p>{bookData.summary}</p>
+
+            <button onClick={() => handleAddToCart(bookData.ISBN)}>
+              Add to Cart
+            </button>
+          </div>
+          <Cart cart={cart} />
+        </>
       )}
     </div>
   );
