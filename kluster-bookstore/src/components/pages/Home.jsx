@@ -18,8 +18,8 @@ function Home() {
 
   return (
     <div>
-      <BookSection section={"Continue Reading"} list={books} cart={cart} />
-      <BookSection section={"Added Recently"} list={books} cart={cart} />
+      <BookSection section={"Popular books"} list={books} cart={cart} />
+      <BookSection section={"Recently added"} list={books} cart={cart} />
     </div>
   );
 }

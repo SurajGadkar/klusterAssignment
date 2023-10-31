@@ -4,7 +4,8 @@ import { useCart } from "../context/CartContext";
 import styles from "./Header.module.css";
 
 function Header() {
-  const { openCart, cartQuantity } = useCart();
+  const { openCart, isOpen } = useCart();
+
   return (
     <div className={styles.main__container}>
       <ul className={styles.nav}>
@@ -26,9 +27,8 @@ function Header() {
       </ul>
 
       <div>
-        <button className={styles.btn} onClick={openCart}>
-          {" "}
-          Cart{" "}
+        <button className={styles.btn} onClick={() => openCart()}>
+          {isOpen ? "Close" : "Cart"}
         </button>
       </div>
     </div>

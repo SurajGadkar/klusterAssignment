@@ -3,11 +3,13 @@ import BookCard from "../BookCard";
 import { getBooks } from "../../api/api";
 import styles from "./Books.module.css";
 import Cart from "../Cart";
+import { useCart } from "../../context/CartContext";
 
 function Books() {
   const [books, setBooks] = useState([]);
   const [sortedBooks, setSortedBooks] = useState([]);
   const [toggleSort, setToggleSort] = useState(false);
+  const { isOpen } = useCart();
 
   useEffect(() => {
     const data = getBooks();
@@ -40,8 +42,6 @@ function Books() {
     SortByAuthorName();
   };
 
-  console.log(toggleSort);
-
   return (
     <>
       <button onClick={handleSortToggle} className={styles.sort__button}>
@@ -49,8 +49,9 @@ function Books() {
       </button>
       <div className={styles.main__container}>
         <div className={styles.left}>
-          {!toggleSort
-            ? books.map((book) => {
+          {!toggleSort ? (
+            books.length ? (
+              books.map((book) => {
                 return (
                   <BookCard
                     key={book.ISBN}
@@ -63,23 +64,32 @@ function Books() {
                   />
                 );
               })
-            : sortedBooks.map((book) => {
-                return (
-                  <BookCard
-                    key={book.ISBN}
-                    id={book.ISBN}
-                    title={book.title}
-                    author={book.author}
-                    summary={book.summary}
-                    image={book.image}
-                    price={book.price}
-                  />
-                );
-              })}
+            ) : (
+              <h1>Loading ...</h1>
+            )
+          ) : (
+            sortedBooks.map((book) => {
+              return (
+                <BookCard
+                  key={book.ISBN}
+                  id={book.ISBN}
+                  title={book.title}
+                  author={book.author}
+                  summary={book.summary}
+                  image={book.image}
+                  price={book.price}
+                />
+              );
+            })
+          )}
         </div>
-        <div className={styles.right}>
-          <Cart />
-        </div>
+        {isOpen ? (
+          <div className={styles.right}>
+            {books.length ? <Cart /> : <h3>Loading...</h3>}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

@@ -16,7 +16,7 @@ const CartItem = ({ itemId, quantity }) => {
   }, []);
 
   const { price } = itemData;
-  const itemValue = price?.value * quantity;
+  const itemValue = price?.value * quantity || 0;
 
   return (
     <div className={styles.cart__item__container}>
@@ -34,6 +34,7 @@ const CartItem = ({ itemId, quantity }) => {
     </div>
   );
 };
+
 function Cart() {
   const { cartItem } = useCart();
   const [books, setBooks] = useState([]);

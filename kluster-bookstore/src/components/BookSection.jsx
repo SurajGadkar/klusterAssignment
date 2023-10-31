@@ -7,19 +7,23 @@ function BookSection({ section, list }) {
     <div className={styles.container}>
       <h1>{section}</h1>
       <div className={styles.main__container}>
-        {list.map((book) => {
-          return (
-            <BookCard
-              key={book.ISBN}
-              id={book.ISBN}
-              title={book.title}
-              author={book.author}
-              summary={book.summary}
-              image={book.image}
-              price={book.price}
-            />
-          );
-        })}
+        {list.length ? (
+          list.map((book) => {
+            return (
+              <BookCard
+                key={book.ISBN}
+                id={book.ISBN}
+                title={book.title}
+                author={book.author}
+                summary={book.summary}
+                image={book.image}
+                price={book.price}
+              />
+            );
+          })
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );

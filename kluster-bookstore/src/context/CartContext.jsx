@@ -10,8 +10,9 @@ export function CartProvider({ children }) {
   const [cartItem, setCartItem] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const openCart = () => setIsOpen(true);
-  const closeCart = () => setIsOpen(false);
+  const openCart = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   const cartQuantity =
     cartItem.length > 0
@@ -60,6 +61,8 @@ export function CartProvider({ children }) {
     });
   };
 
+  console.log(isOpen);
+
   return (
     <CartContext.Provider
       value={{
@@ -69,6 +72,8 @@ export function CartProvider({ children }) {
         removeItem,
         cartItem,
         cartQuantity,
+        openCart,
+        isOpen,
       }}
     >
       {children}

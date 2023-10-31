@@ -3,3 +3,7 @@
   width: 200px;
   object-fit: contain;
 }
+
+.main__container {
+  margin: 25px;
+}

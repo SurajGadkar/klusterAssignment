@@ -9,3 +9,7 @@
   justify-content: start;
   align-items: center;
 }
+
+.main__container {
+  margin: 25px;
+}

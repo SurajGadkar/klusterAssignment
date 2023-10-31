@@ -24,10 +24,10 @@ function BooksDetail() {
         <>
           <div className={styles.main__container}>
             <img className={styles.image} src={bookData.image} />
-            <h1>{bookData.title}</h1>
-            <p>{bookData.author}</p>
-            <h3> $ {bookData.price?.value}</h3>
-            <p>{bookData.summary}</p>
+            <h1> Title : {bookData.title}</h1>
+            <p>Author : {bookData.author}</p>
+            <h4>Price : ${bookData.price?.value}</h4>
+            <p>-- {bookData.summary}</p>
           </div>
         </>
       )}
