@@ -11,7 +11,7 @@
 .main__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   min-height: 600px;
   min-width: 200px;
   max-width: 240px;
