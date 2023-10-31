@@ -3,6 +3,7 @@ import { getAuthors } from "../../api/api";
 import AuthorCard from "../authorCard";
 
 import styles from "./Author.module.css";
+import Cart from "../Cart";
 
 function Author() {
   const [authors, setAuthors] = useState([]);

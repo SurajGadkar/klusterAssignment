@@ -30,10 +30,11 @@
   width: 100px;
   height: 32px;
   border-radius: 0.5rem;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-background-primary);
+  border-color: var(--color-background-primary);
 }
 
 .btn:hover {
-  color: var(--color-white);
+  color: var(--color-background-secondary);
   cursor: pointer;
 }

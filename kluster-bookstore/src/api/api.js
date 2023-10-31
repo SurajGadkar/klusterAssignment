@@ -33,3 +33,16 @@ export const getBookById = (books, id) => {
 export const getBooksByAuthorName = (books, author) => {
   return books.filter((book) => book.author === author);
 };
+
+export const getTotalCartValue = (books, cartItems) => {
+  let total = 0;
+  books.forEach((book) => {
+    cartItems.forEach((item) => {
+      if (book.ISBN === item.id) {
+        const currSum = item.quantity * book.price.value;
+        total += currSum;
+      }
+    });
+  });
+  return total;
+};

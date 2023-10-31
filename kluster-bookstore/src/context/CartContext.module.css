@@ -1,0 +1,13 @@
+.main__container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.left {
+  flex: 3;
+}
+
+.right {
+  flex: 1;
+}

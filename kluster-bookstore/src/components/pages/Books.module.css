@@ -1,7 +1,31 @@
 .main__container {
   display: flex;
-  flex-wrap: wrap;
-  justify-contain: space-between;
-  align-items: center;
+  align-items: start;
   padding: 20px;
+}
+
+.left {
+  display: flex;
+  flex: 3;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex: 1;
+}
+
+.sort__button {
+  margin: 0 20px;
+  width: 200px;
+  height: 32px;
+  border-radius: 0.5rem;
+  background-color: var(--color-background-primary);
+}
+
+.sort__button:hover {
+  color: var(--color-primary);
+  cursor: pointer;
 }
