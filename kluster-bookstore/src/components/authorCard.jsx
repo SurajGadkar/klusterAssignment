@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./BookCard.module.css";
+import styles from "./authorCard.module.css";
 import { Link } from "react-router-dom";
 
 function AuthorCard({ id, name, image, biography }) {
@@ -7,9 +7,11 @@ function AuthorCard({ id, name, image, biography }) {
     <div className={styles.main__container}>
       <Link className={styles.link} to={`/authors/${id}`}>
         <img className={styles.image} src={image} />
-        <h1>{name}</h1>
+        <h1 className={styles.title}>{name}</h1>
       </Link>
-      <p>{biography}</p>
+      <p className={styles.bio}>
+        {biography.length > 60 ? biography.slice(0, 60) + "..." : biography}
+      </p>
     </div>
   );
 }

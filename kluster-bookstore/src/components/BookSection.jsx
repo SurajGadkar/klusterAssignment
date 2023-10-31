@@ -1,22 +1,26 @@
 import React from "react";
 import BookCard from "./BookCard";
+import styles from "./BookSection.module.css";
 
-function BookSection({ list }) {
+function BookSection({ section, list }) {
   return (
-    <div>
-      {list.map((book) => {
-        return (
-          <BookCard
-            key={book.ISBN}
-            id={book.ISBN}
-            title={book.title}
-            author={book.author}
-            summary={book.summary}
-            image={book.image}
-            price={book.price}
-          />
-        );
-      })}
+    <div className={styles.container}>
+      <h1>{section}</h1>
+      <div className={styles.main__container}>
+        {list.map((book) => {
+          return (
+            <BookCard
+              key={book.ISBN}
+              id={book.ISBN}
+              title={book.title}
+              author={book.author}
+              summary={book.summary}
+              image={book.image}
+              price={book.price}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

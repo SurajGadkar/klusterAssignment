@@ -1,11 +1,7 @@
-.image {
-  height: 300px;
-  width: 200px;
-  object-fit: contain;
-}
-.books__container {
+.main__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   align-items: center;
+  margin: 0 20px;
 }

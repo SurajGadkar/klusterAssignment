@@ -1,9 +1,31 @@
 .image {
   height: 300px;
-  width: 200px;
-  object-fit: contain;
+  width: 100%;
+  border-radius: 1.2rem;
 }
 
 .link {
   text-decoration: none;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  min-width: 200px;
+  max-width: 240px;
+  border: 1px solid #ebf3e8;
+  border-radius: 1.2rem;
+  margin: 15px;
+  background-color: #ebf3e8;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
+.bio {
+  text-size: 12px;
 }

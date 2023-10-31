@@ -1,20 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+import styles from "./Header.module.css";
 
 function Header() {
+  const { openCart, cartQuantity } = useCart();
   return (
-    <div>
-      <ul>
+    <div className={styles.main__container}>
+      <ul className={styles.nav}>
         <li>
-          <Link to="/">Home</Link>
+          <Link className={styles.list} to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/books">Books</Link>
+          <Link className={styles.list} to="/books">
+            Books
+          </Link>
         </li>
         <li>
-          <Link to="/authors">Author</Link>
+          <Link className={styles.list} to="/authors">
+            Author
+          </Link>
         </li>
       </ul>
+
+      <div>
+        <button className={styles.btn} onClick={openCart}>
+          {" "}
+          Cart{" "}
+        </button>
+      </div>
     </div>
   );
 }

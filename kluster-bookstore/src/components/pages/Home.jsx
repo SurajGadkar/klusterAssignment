@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getBooks } from "../api/api.js";
+import { getBooks } from "../../api/api.js";
 
-import BookSection from "../components/BookSection.jsx";
+import BookSection from "../BookSection.jsx";
 
 function Home() {
   const [books, setBooks] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const data = getBooks();
@@ -17,9 +18,8 @@ function Home() {
 
   return (
     <div>
-      <BookSection list={books} />
-      <BookSection list={books} />
-      <BookSection list={books} />
+      <BookSection section={"Continue Reading"} list={books} cart={cart} />
+      <BookSection section={"Added Recently"} list={books} cart={cart} />
     </div>
   );
 }

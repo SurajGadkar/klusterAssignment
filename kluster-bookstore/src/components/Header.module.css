@@ -1,0 +1,35 @@
+.main__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-background-secondary);
+  height: 68px;
+  margin-bottom: 20px;
+}
+
+.nav {
+  list-style: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  color: var(--color-background-primary);
+}
+
+.list {
+  text-decoration: none;
+  color: var(--color-background-primary);
+}
+
+.btn {
+  width: 100px;
+  height: 32px;
+  border-radius: 0.5rem;
+  background-color: var(--color-background-primary);
+}
+
+.btn:hover {
+  color: var(--color-white);
+  cursor: pointer;
+}

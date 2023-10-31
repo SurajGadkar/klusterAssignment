@@ -45,19 +45,21 @@ function AuthorDetail() {
           {books.length === 0 ? (
             <h3>Loading...</h3>
           ) : (
-            books.map((book) => {
-              return (
-                <BookCard
-                  key={book.ISBN}
-                  id={book.ISBN}
-                  title={book.title}
-                  author={book.author}
-                  summary={book.summary}
-                  image={book.image}
-                  price={book.price}
-                />
-              );
-            })
+            <div className={styles.books__container}>
+              {books.map((book) => {
+                return (
+                  <BookCard
+                    key={book.ISBN}
+                    id={book.ISBN}
+                    title={book.title}
+                    author={book.author}
+                    summary={book.summary}
+                    image={book.image}
+                    price={book.price}
+                  />
+                );
+              })}
+            </div>
           )}
         </div>
       )}

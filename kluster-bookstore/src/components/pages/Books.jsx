@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import BookCard from "../components/BookCard";
-import { getBooks } from "../api/api";
+import BookCard from "../BookCard";
+import { getBooks } from "../../api/api";
+import styles from "./Books.module.css";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -15,7 +16,7 @@ function Books() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.main__container}>
       {books.map((book) => {
         return (
           <BookCard

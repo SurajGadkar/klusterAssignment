@@ -1,15 +1,16 @@
 import "./App.css";
 import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import Books from "./pages/Books";
-import Author from "./pages/Author";
+import Home from "./components/pages/Home";
+import Books from "./components/pages/Books";
+import Author from "./components/pages/Author";
 import BooksDetail from "./components/BooksDetail";
 import AuthorDetail from "./components/AuthorDetail";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -20,7 +21,7 @@ function App() {
           <Route path="/authors/:authorId" element={<AuthorDetail />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 }
 

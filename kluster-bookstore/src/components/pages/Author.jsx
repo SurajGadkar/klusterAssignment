@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { getAuthors } from "../api/api";
-import AuthorCard from "../components/authorCard";
+import { getAuthors } from "../../api/api";
+import AuthorCard from "../authorCard";
+
+import styles from "./Author.module.css";
 
 function Author() {
   const [authors, setAuthors] = useState([]);
@@ -14,7 +16,7 @@ function Author() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
+    <div className={styles.main__container}>
       {authors.map((author) => {
         return (
           <AuthorCard
