@@ -12,10 +12,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 600px;
+  min-height: 520px;
   min-width: 200px;
   max-width: 240px;
-  border: 1px solid #ebf3e8;
+  border: 0.5px solid var(--color-background-secondary);
   border-radius: 1.2rem;
   margin: 15px;
   background-color: #ebf3e8;
