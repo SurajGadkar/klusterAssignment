@@ -66,7 +66,7 @@ function Cart() {
           <h3>Cart is empty</h3>
         )}
       </div>
-      <p>Total Cart Value : ${total}</p>
+      <h3>Total Cart Value : ${total}</h3>
     </div>
   );
 }

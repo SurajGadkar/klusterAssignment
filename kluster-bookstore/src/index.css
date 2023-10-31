@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  text-decoration: none;
-}
-
 :root {
   /* Global variables to be defined here */
   --color-background-primary: #ece3ce;
@@ -32,6 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-background-black);
   color: var(--color-primary);
+  font-family: "Roboto Flex", sans-serif;
 }
 img,
 picture,
