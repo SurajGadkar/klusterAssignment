@@ -3,6 +3,10 @@
   width: 100%;
   border-radius: 1.2rem;
 }
+.image:hover {
+  scale: 1.02;
+  transition: 0.1s;
+}
 
 .link {
   text-decoration: none;
